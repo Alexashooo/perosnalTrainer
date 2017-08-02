@@ -1,0 +1,26 @@
+// Place all the styles related to the Landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-container {
+  width: 100%;
+  height: 80vh;
+  background-color: #DCDCDC;
+}
+
+.nav {
+  background-color: #20B2AA;
+}
+
+.logo-link {
+  color: #F5FFFA;
+  font-weight: bold;
+  font-size: 20px;
+  font-style: oblique;
+}
+
+.auth-links {
+  color: #F5FFFA;
+  font-weight: bold;
+  font-size: 12px;
+}

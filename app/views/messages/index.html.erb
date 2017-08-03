@@ -10,15 +10,25 @@
             <%= link_to message.subject, message %>
           </h4>
           <small>
-            <%= message.body %>
+            <% if message.user_id === current_user.id %>
+                  <% msgUser = User.where(email: message.recipient_email) %>
+            To: <%= msgUser.pluck(:first_name).first%>
+                <%= msgUser.pluck(:last_name).first%> -
+                <%= msgUser.pluck(:role).first%>
+
+            <%else%>
+                   <% msgRetr = User.where(id: message.user_id) %>
+            From: <%= msgRetr.pluck(:first_name).first%>
+                  <%= msgRetr.pluck(:last_name).first%> -
+                  <%= msgRetr.pluck(:role).first%>
+            <%end%>
           </small>
         </div>
       </div>
     <%end%>
   </div>
 
-  <div class="col-md-4">
-    <%= link_to "New Message", new_message_path, class: 'btn btn-success' %>
-  </div>
+  <%= link_to "New Chat", new_message_path, class: 'btn btn-success' %>
+  <%= link_to 'Back', root_path, class: 'btn btn-default' %>
 
 </div>

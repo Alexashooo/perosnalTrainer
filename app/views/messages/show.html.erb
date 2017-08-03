@@ -1,2 +1,15 @@
-<h1>Messages#show</h1>
-<p>Find me in app/views/messages/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+       <h4><%= @message.subject %></h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+        <%= @message.body %>
+    </div>
+  </div>
+
+  <%= link_to 'Back', messages_path, class: 'btn btn-default' %>
+</div>

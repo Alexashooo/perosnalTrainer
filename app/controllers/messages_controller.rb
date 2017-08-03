@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
     before_action :authenticate_user!
-    #before_action :authorize_user, except: [:new, :create]
+
 
     def index
       @messages = Message.visible_to(current_user)
@@ -40,13 +40,8 @@ class MessagesController < ApplicationController
     private
 
     def message_params
-      params.require(:message).permit(:subject, :body, :recipient_id)
+      params.require(:message).permit(:subject, :body, :recipient_email)
     end
 
-    #def authorize_user
-      #message = Message.find(params[:id])
-      #unless current_user.id == message.user_id || current_user.id == message.recipient_id
 
-      #end
-    #end
 end

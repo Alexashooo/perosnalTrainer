@@ -12,9 +12,9 @@
         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter your message" %>
       </div>
 
-      <div class="field">
-        <%= f.label :recipient_id %>
-        <%= f.number_field :recipient_id, placeholder: "Message To:" %>
+      <div class="form-group">
+        <%= f.label :recipient_email %>
+        <%=f.select :recipient_email, options_for_select(User.where.not(id: current_user.id).collect {|user| ["#{user.first_name}  #{user.last_name} #{user.role}", user.first_name] }), :include_blank => true%>
       </div>
 
 

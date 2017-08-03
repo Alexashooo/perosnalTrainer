@@ -5,5 +5,7 @@ class User < ApplicationRecord
 
   before_save {self.role ||= :member}
 
+  has_many :messages, -> {:visible_to}
+
   enum role: [:member, :trainer]
 end

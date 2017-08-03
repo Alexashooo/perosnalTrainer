@@ -1,2 +1,24 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<h1>New Message</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @message do |f| %>
+      <div class="form-group">
+        <%= f.label :subject %>
+        <%= f.text_field :subject, class: 'form-control', placeholder: "Subject" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body %>
+        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter your message" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :recipient_id %>
+        <%= f.number_field :recipient_id, placeholder: "Message To:" %>
+      </div>
+
+
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>

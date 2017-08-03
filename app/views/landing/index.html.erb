@@ -5,7 +5,7 @@
   </section>
   <section class='chat-container'>
     <% if user_signed_in? %>
-        <button type="button" class="btn btn-default btn-lg chat-btn">Chat</button>
+        <%= link_to 'Chat', messages_path, :class => 'btn btn-default btn-lg chat-btn' %>
     <% end %>
   </section>
   <section class='home-image-container'></section>

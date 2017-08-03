@@ -1,2 +1,24 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<h1>Messages</h1>
+
+<div class="row">
+  <div class="col-md-8">
+
+    <% @messages.each do |message| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to message.subject, message %>
+          </h4>
+          <small>
+            <%= message.body %>
+          </small>
+        </div>
+      </div>
+    <%end%>
+  </div>
+
+  <div class="col-md-4">
+    <%= link_to "New Message", new_message_path, class: 'btn btn-success' %>
+  </div>
+
+</div>

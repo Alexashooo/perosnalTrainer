@@ -1,15 +1,5 @@
 Rails.application.routes.draw do
-  get 'messages/index'
-
-  get 'messages/show'
-
-  get 'messages/new'
-
-  get 'messages/create'
-
-  get 'messages/destroy'
-
-  get 'landing/index'
+  resources :messages
 
   devise_for :users
 
